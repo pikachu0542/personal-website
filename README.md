@@ -1,6 +1,8 @@
-# Portfolio.dev
+# Personal Website
+This is the code for my personal website. The design is based off of the AJ Astro theme
 
-This is a personal portfolio website built with Astro, TypeScript, and Tailwind CSS. It features a unique Neovim-inspired theme and includes sections for About, Experience, Education, Skills, and Projects.
+* Astro theme: https://astro.build/themes/details/aj/
+* Theme creator: https://github.com/Anmol-TheDev/potfolio2.0
 
 ## Features
 
