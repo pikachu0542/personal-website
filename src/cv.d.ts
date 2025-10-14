@@ -25,7 +25,7 @@ interface Basics {
 }
 
 interface Location {
-  address?git: string;
+  address?: string;
   city: string;
   postalCode?: string;
   countryCode: string;
