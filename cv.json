@@ -1,27 +1,34 @@
 {
   "analyticsCode": "",
   "basics": {
-    "name": "Anmol Singh",
+    "name": "Ella Soccoli",
     "label": "Software Developer",
     "animated_main_label": "developer",
     "animated_secondary_initial_label": "software",
     "animated_secondary_final_label": "fullstack",
     "image": "/pfp.jpeg",
-    "email": "anmolsingh51200@gmail.com",
+    "email": "soccoli2015@gmail.com",
     "url": "https://anmol.pro",
     "summary": "Full Stack developer with experience building and deploying production-ready web apps in freelance teams. Delivered two client websites and worked closely with teams to create scalable, maintainable solutions.",
     "theme": "platinum",
     "location": {
-      "address": "Panipat",
-      "city": "Haryana",
-      "countryCode": "IN",
-      "region": "India"
+      "address": "",
+      "city": "Long Island",
+      "countryCode": "US",
+      "region": "New York"
     },
     "profiles": [
       {
-        "network": "X / Twitter",
-        "icon": "ri:twitter-fill",
-        "color": "#1DA1F2",
+        "network": "Email",
+        "icon": "ri:mail-fill",
+        "color": "#D44638",
+        "username": "soccoli2015",
+        "url": "mailto:soccoli2015@gmail.com"
+      },
+      {
+        "network": "LinkedIn",
+        "icon": "ri:linkedin-fill",
+        "color": "#0a66c2",
         "username": "@anmolthedev",
         "url": "https://x.com/anmolthedev"
       },
@@ -29,92 +36,115 @@
         "network": "GitHub",
         "icon": "mdi:github",
         "color": "#929AAB",
-        "username": "Anmol-TheDev",
-        "url": "https://github.com/Anmol-TheDev"
+        "username": "pikachu0542",
+        "url": "https://github.com/pikachu0542"
       },
       {
-        "network": "Email",
-        "icon": "ri:mail-fill",
-        "color": "#D44638",
-        "username": "anmolsingh",
-        "url": "mailto:anmolsingh51200@gmail.com"
-      },
-      {
-        "network": "GitHub Stars",
-        "icon": "ri:star-line",
+        "network": "Blog",
+        "icon": "ri:news-line",
         "color": "#FBBC05",
-        "username": "Star on GitHub",
-        "url": "https://github.com/Anmol-TheDev/potfolio2.0"
+        "username": "",
+        "url": ""
       }
     ]
   },
   "work": [
     {
-      "name": "Advika Innovate",
-      "position": "Frontend Developer",
-      "location_type": "Remote",
-      "location": "IN",
-      "url": "https://advikainnovate.com/",
-      "startDate": "2025-07-01",
+      "name": "Rochester Institute of Technology",
+      "position": "Teaching Assistant",
+      "location_type": "Rochester",
+      "location": "NY",
+      "url": "https://rit.edu",
+      "startDate": "2024-08-25",
       "endDate": null,
-      "summary": "Contributing to a centralized ecommerce platform to manage multiple ecommerce stores from a single interface, including order and inventory management.",
+      "summary": "",
       "responsibilities": [
-        "Developing and maintaining the frontend of a centralized ecommerce platform.",
-        "Implementing features for order management, inventory control, and other ecommerce functionalities.",
-        "Collaborating with the team to create a scalable and user-friendly platform."
+        "Assisted 30+ students with coursework and programming questions relating to C# and MonoGame",
+        "Provided timely feedback on assignments to support student learning",
+        "Wrote a shell script to automate tedious aspects of grading, such as downloading student submissions"
       ],
       "skills": {
-        "React": "simple-icons:react",
-        "MUI": "simple-icons:mui",
-        "React Hook Form": "simple-icons:reacthookform",
-        "React Query": "simple-icons:reactquery",
-        "Zod": "simple-icons:zod",
-        "TypeScript": "simple-icons:typescript",
-        "CSS3": "ri:css3-fill",
-        "Git": "mdi:git",
-        "GitHub": "mdi:github"
+        "C#": "mdi:language-csharp",
+        "Monogame": "simple-icons:monogame",
+        "Git": "mdi:git"
       }
     },
     {
-      "name": "PixelSaffron",
-      "position": "Full-Stack Developer",
-      "location_type": "Remote",
-      "location": "IN",
-      "url": "https://pixelsaffron.in/",
-      "startDate": "2024-10-03",
-      "endDate": "2025-06-30",
-      "summary": "Led front-end development for a full-stack eCommerce platform built for a Mumbai-based clothing brand. Implemented core features like order management, secure payment integration, and responsive UI for seamless user experience.",
+      "name": "Liberty Mutual",
+      "position": "Software Engineering Intern",
+      "location_type": "Portsmouth",
+      "location": "NH",
+      "url": "https://libertymutual.com/",
+      "startDate": "2025-05-19",
+      "endDate": "2025-08-01",
+      "summary": "",
+      "responsibilities": [
+        "Developed an AWS Lambda using Python that kicks off the daily financial reconciliation process at a scheduled time",
+        "Collaborate with engineers and the product owner to identify scheduling and input requirements",
+        "Implemented error handling logic to ensure smooth and reliable execution"
+      ],
+      "skills": {
+        "Python": "simple-icons:python",
+        "AWS Lambda": "mdi:aws",
+        "Git": "mdi:git"
+      }
+    },
+    {
+      "name": "Liberty Mutual",
+      "position": "Software Engineering Intern",
+      "location_type": "Portsmouth",
+      "location": "NH",
+      "url": "https://libertymutual.com/",
+      "startDate": "2024-05-20",
+      "endDate": "2024-08-02",
+      "summary": "",
 
       "responsibilities": [
-        "Built and maintained both front-end and back-end components of a production-ready eCommerce web app using modern web technologies.",
-        "Focused on building scalable, responsive, and maintainable front-end features, ensuring high performance and usability.",
-        "Integrated payment gateways and developed order management features to support real-time order processing.",
-        "Collaborated with clients and team members to align technical solutions with business needs.",
-        "Ensured clean, modular code and implemented best practices for performance optimization and maintainability.",
-        "Developed and connected RESTful APIs to handle key business logic and data flow between client and server."
+        "Refactored an existing service that allows executives to request corporate jets, integrating it into existing infrastructure and generating $6,000 in annual savings",
+        "Rebuilt the frontend using React and TypeScript, restructuring the request form to improve usability and create a more intuitive experience"
       ],
 
       "skills": {
-        "Go": "simple-icons:go",
-        "Gin": "simple-icons:gin",
-        "HTML5": "simple-icons:html5",
-        "CSS3": "ri:css3-fill",
-        "Tailwind": "mdi:tailwind",
-        "Bootstrap": "simple-icons:bootstrap",
-        "JavaScript ": "simple-icons:javascript",
-        "TypeScript": "simple-icons:typescript",
-        "Next-Js": "simple-icons:nextdotjs",
         "React": "simple-icons:react",
-        "NodeJS": "ri:nodejs-line",
+        "TypeScript": "simple-icons:typescript",
+        "HTML": "simple-icons:html5",
+        "CSS": "ri:css3-fill",
+        "Git": "mdi:git"
+      }
+    },
+    {
+      "name": "SJ Associates",
+      "position": "Data Engineering Intern",
+      "location_type": "Remote",
+      "location": "NY",
+      "url": "https://sjassoc.com",
+      "startDate": "2023-05-13",
+      "endDate": "2023-08-10",
+      "summary": "",
 
-        "Bruno": "simple-icons:bruno",
-        "Redux": "simple-icons:redux",
-        "Git": "mdi:git",
-        "GitHub": "mdi:github"
+      "responsibilities": [
+        "Developed and executed SQL queries to generate a variety of data views, facilitating effective visualization of key company metrics",
+        "Focused on enhancing data usability and supporting informed decision-making through intuitive interface design"
+      ],
+
+      "skills": {
+        "C#": "mdi:language-csharp",
+        "ASP.Net": "simple-icons:dotnet",
+        "SQL": "mdi:database-search",
+        "HTML": "simple-icons:html5",
+        "MS Access": "mdi:microsoft-access"
       }
     }
   ],
-  "education": [],
+  "education": [
+    {
+      "institution": "Rochester Institute of Technology",
+      "url": "https://rit.edu",
+      "startDate": "2022-08-22",
+      "endDate": "2026-05-10",
+      "area": "Game Design & Development, Computing & Info. Tech."
+    }
+  ],
   "certificates": [],
   "skills": [
     {
