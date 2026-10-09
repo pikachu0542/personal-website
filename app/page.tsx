@@ -1,69 +1,113 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Container } from "@/components/layout/Container";
+import { Hero } from "@/components/ui/Hero";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { ContactBanner } from "@/components/contact/ContactBanner";
+import { FeaturedProjectTile, ProjectTile } from "@/components/projects/ProjectTile";
+import { projects } from "@/data/projects";
+import { experience } from "@/data/experience";
+import { skills } from "@/data/skills";
+import { hobbies } from "@/data/hobbies";
+import { formatDateRange } from "@/lib/utils";
+import { PostCard } from "@/components/blog/PostCard";
+import { getAllPosts } from "@/lib/posts";
 
-export default function Home() {
+const tileLabel = "font-mono text-[13px] text-muted";
+const tile = "flex flex-col gap-5 rounded-[28px] border border-line bg-card p-8 md:col-span-4";
+const tileLink = "text-sm font-extrabold text-accent";
+
+export default function HomePage() {
+  // Big tile = first featured project; the next two fill the smaller tiles.
+  const featured = projects.find((p) => p.featured) ?? projects[0];
+  const others = projects.filter((p) => p !== featured).slice(0, 2);
+
+  const topSkills = skills.flatMap((c) => c.skills).slice(0, 8);
+  const recentRoles = experience.slice(0, 2);
+  const latestPosts = getAllPosts().slice(0, 2);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <Container className="flex flex-col gap-[72px] pb-12 pt-2">
+      <Hero />
+
+      {/* Projects */}
+      <section className="flex flex-col gap-6">
+        <SectionHeader
+          label="// projects"
+          title="Selected work"
+          href="/projects"
+          linkLabel="All projects"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
+          {featured && <FeaturedProjectTile project={featured} />}
+          {others.map((p) => (
+            <ProjectTile key={p.slug} project={p} />
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Latest writing */}
+      {latestPosts.length > 0 && (
+        <section className="flex flex-col gap-6">
+          <SectionHeader
+            label="// blog"
+            title="Latest writing"
+            href="/blog"
+            linkLabel="All posts"
+          />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {latestPosts.map((post) => (
+              <PostCard key={post.slug} post={post} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* About */}
+      <section className="flex flex-col gap-6">
+        <SectionHeader label="// about" title="A bit more about me" />
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
+          <article className={tile}>
+            <div className={tileLabel}>skills</div>
+            <ul className="flex flex-wrap gap-2">
+              {topSkills.map((s) => (
+                <li
+                  key={s.name}
+                  className="rounded-full bg-chip px-3.5 py-2 text-sm font-semibold text-accent"
+                >
+                  {s.name}
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          <article className={tile}>
+            <div className={tileLabel}>experience</div>
+            {recentRoles.map((e) => (
+              <div key={e.id}>
+                <div className="text-[17px] font-extrabold">{e.role}</div>
+                <div className="text-sm text-muted">
+                  {e.organization} · {formatDateRange(e.dates)}
+                </div>
+              </div>
+            ))}
+            <Link href="/resume" className={tileLink}>
+              Full résumé →
+            </Link>
+          </article>
+
+          <article className={tile}>
+            <div className={tileLabel}>off the clock</div>
+            <div className="text-[28px] font-extrabold leading-tight tracking-[-0.02em]">
+              {hobbies.map((h) => h.title).join(", ")}
+            </div>
+            <Link href="/hobbies" className={tileLink}>
+              See hobbies →
+            </Link>
+          </article>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <ContactBanner />
+    </Container>
   );
 }
